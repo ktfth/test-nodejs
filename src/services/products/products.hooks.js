@@ -6,11 +6,13 @@ const denyFieldIsMarketable = require('../../hooks/deny-field-is-marketable');
 
 const atomicFieldInventoryQuantity = require('../../hooks/atomic-field-inventory-quantity');
 
+const atomicFieldIsMarketable = require('../../hooks/atomic-field-is-marketable');
+
 module.exports = {
   before: {
     all: [],
     find: [atomicFieldInventoryQuantity()],
-    get: [atomicFieldInventoryQuantity()],
+    get: [atomicFieldInventoryQuantity(), atomicFieldIsMarketable()],
     create: [denyInvetoryQuantity(), denyFieldIsMarketable()],
     update: [denyInvetoryQuantity(), denyFieldIsMarketable()],
     patch: [],

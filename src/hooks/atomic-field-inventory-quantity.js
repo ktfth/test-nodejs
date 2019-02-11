@@ -6,8 +6,8 @@ module.exports = function (options = {}) {
   return async context => {
     if ('data' in context && context.data.constructor.toString().indexOf('Array') === -1) {
       if ('warehouses' in context.data) {
-        context.data.identity = (context.data.identity !== undefined && context.data.identity) || { quantity: 0 };
-        context.data.identity.quantity = (context.data.identity.quantity !== undefined && context.data.identity.quantity) || 0;
+        context.data.inventory = (context.data.inventory !== undefined && context.data.inventory) || { quantity: 0 };
+        context.data.inventory.quantity = (context.data.inventory.quantity !== undefined && context.data.inventory.quantity) || 0;
         context.data.warehouses.map(warehouse => {
           if ('quantity' in warehouse) {
             context.data.identity.quantity += warehouse.quantity;
