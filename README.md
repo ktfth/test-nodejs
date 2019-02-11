@@ -1,73 +1,56 @@
-### Backend Test
+# test-nodejs
 
-Esta é uma avaliação básica de código.
+> 
 
-O objetivo é conhecer um pouco do seu conhecimento/prática de RESTful e NodeJS.
+## About
 
-Recomendamos que você não gaste mais do que 4 - 6 horas.
+This project uses [Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications.
 
-Faça um fork deste repositório.
+## Getting Started
 
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+Getting up and running is as easy as 1, 2, 3.
 
-### Tarefas
+1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
+2. Install your dependencies
 
-Com a seguinte representação de produto:
+    ```
+    cd path/to/test-nodejs; npm install
+    ```
 
-```json
-{
-    "sku": 43264,
-    "name": "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g",
-    "inventory": {
-        "quantity": 15,
-        "warehouses": [
-            {
-                "locality": "SP",
-                "quantity": 12,
-                "type": "ECOMMERCE"
-            },
-            {
-                "locality": "MOEMA",
-                "quantity": 3,
-                "type": "PHYSICAL_STORE"
-            }
-        ]
-    },
-    "isMarketable": true
-}
+3. Start your app
+
+    ```
+    npm start
+    ```
+
+## Testing
+
+Simply run `npm test` and all your tests in the `test/` directory will be run.
+
+## Scaffolding
+
+Feathers has a powerful command line interface. Here are a few things it can do:
+
+```
+$ npm install -g @feathersjs/cli          # Install Feathers CLI
+
+$ feathers generate service               # Generate a new Service
+$ feathers generate hook                  # Generate a new Hook
+$ feathers help                           # Show all commands
 ```
 
-Crie endpoints para as seguintes ações:
+## Help
 
-- [ ] Criação de produto onde o payload será o json informado acima (exceto as propriedades **isMarketable** e **inventory.quantity**)
+For more information on all the things you can do with Feathers visit [docs.feathersjs.com](http://docs.feathersjs.com).
 
-- [ ] Edição de produto por **sku**
+## Changelog
 
-- [ ] Recuperação de produto por **sku**
+__0.1.0__
 
-- [ ] Deleção de produto por **sku**
+- Initial release
 
-### Requisitos
+## License
 
+Copyright (c) 2018
 
-- [ ] Toda vez que um produto for recuperado por **sku** deverá ser calculado a propriedade: **inventory.quantity**
-
-        A propriedade inventory.quantity é a soma da quantity dos warehouses
-
-- [ ] Toda vez que um produto for recuperado por **sku** deverá ser calculado a propriedade: **isMarketable**
-
-        Um produto é marketable sempre que seu inventory.quantity for maior que 0
-
-- [ ] Caso um produto já existente em memória tente ser criado com o mesmo **sku** uma exceção deverá ser lançada
-
-        Dois produtos são considerados iguais se os seus skus forem iguais
-
-
-- [ ] Ao atualizar um produto, o antigo deve ser sobrescrito com o que esta sendo enviado na requisição
-
-        A requisição deve receber o sku e atualizar com o produto que tbm esta vindo na requisição
-
-### Dicas
-
-- Os produtos podem ficar em memória, não é necessário persistir os dados
-- Testes são sempre bem-vindos :smiley:
+Licensed under the [MIT license](LICENSE).
