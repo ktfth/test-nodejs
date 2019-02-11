@@ -8,12 +8,14 @@ const atomicFieldInventoryQuantity = require('../../hooks/atomic-field-inventory
 
 const atomicFieldIsMarketable = require('../../hooks/atomic-field-is-marketable');
 
+const skuExists = require('../../hooks/sku-exists');
+
 module.exports = {
   before: {
     all: [],
     find: [atomicFieldInventoryQuantity()],
     get: [atomicFieldInventoryQuantity(), atomicFieldIsMarketable()],
-    create: [denyInvetoryQuantity(), denyFieldIsMarketable()],
+    create: [skuExists(), denyInvetoryQuantity(), denyFieldIsMarketable()],
     update: [denyInvetoryQuantity(), denyFieldIsMarketable()],
     patch: [],
     remove: []

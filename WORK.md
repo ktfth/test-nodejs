@@ -58,7 +58,7 @@ Crie endpoints para as seguintes ações:
 
         Um produto é marketable sempre que seu inventory.quantity for maior que 0
 
-- [ ] Caso um produto já existente em memória tente ser criado com o mesmo **sku** uma exceção deverá ser lançada
+- [ x ] Caso um produto já existente em memória tente ser criado com o mesmo **sku** uma exceção deverá ser lançada
 
         Dois produtos são considerados iguais se os seus skus forem iguais
 
